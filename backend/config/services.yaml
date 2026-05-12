@@ -52,10 +52,6 @@ services:
         arguments:
             $logger: '@monolog.logger.security'
 
-    App\EventListener\ProductBeforeDeleteListener:
-        tags:
-            - { name: kernel.event_listener, event: 'products.delete.before_remove',  method: onBeforeDelete }
-
     App\EventListener\ProductBeforePatchListener:
         tags:
             - { name: kernel.event_listener, event: 'products.patch.before_persist',  method: onBeforePersist }
